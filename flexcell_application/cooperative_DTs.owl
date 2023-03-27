@@ -1,0 +1,688 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ontologies/cooperativeDTs"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/ontologies/cooperativeDTs">
+    <Prefix name="" IRI="http://www.semanticweb.org/ontologies/collaborativeDTs"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <DataProperty IRI="#isComposedDigitalTwin"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Skill"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Task"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasValue"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSkill"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Relationship"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DigitalTwin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Attribute"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEndpoint"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#cooperatesWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRelationship"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCombinationOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBehavior"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasArgument"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDigitalTwinRelationship"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Behavior"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isConnectedTo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Operation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasOperation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isComposedOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isTransitive"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFile"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DevicePrimitive"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isSymmetric"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDevicePrimitive"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#DevicePrimitive"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Operation"/>
+            <ObjectExactCardinality cardinality="0">
+                <ObjectProperty IRI="#isCombinationOf"/>
+                <Class IRI="#Operation"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Skill"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Operation"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isCombinationOf"/>
+                <Class IRI="#DevicePrimitive"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Task"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Operation"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isCombinationOf"/>
+                <Class IRI="#Skill"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#DevicePrimitive"/>
+        <Class IRI="#Operation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Skill"/>
+        <Class IRI="#Operation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Task"/>
+        <Class IRI="#Operation"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Attribute"/>
+        <Class IRI="#Behavior"/>
+        <Class IRI="#DigitalTwin"/>
+        <Class IRI="#Operation"/>
+        <Class IRI="#Relationship"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#DevicePrimitive"/>
+        <Class IRI="#Skill"/>
+        <Class IRI="#Task"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#cooperatesWith"/>
+        <ObjectProperty IRI="#hasDigitalTwinRelationship"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAttribute"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBehavior"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDevicePrimitive"/>
+        <ObjectProperty IRI="#hasOperation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDigitalTwinRelationship"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOperation"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRelationship"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSkill"/>
+        <ObjectProperty IRI="#hasOperation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTask"/>
+        <ObjectProperty IRI="#hasOperation"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isCombinationOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isComposedOf"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isConnectedTo"/>
+        <ObjectProperty IRI="#hasDigitalTwinRelationship"/>
+    </SubObjectPropertyOf>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#cooperatesWith"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#isConnectedTo"/>
+    </SymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isComposedOf"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#cooperatesWith"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAttribute"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBehavior"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDevicePrimitive"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDigitalTwinRelationship"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasOperation"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRelationship"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSkill"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasTask"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isCombinationOf"/>
+        <Class IRI="#Operation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isComposedOf"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isConnectedTo"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#cooperatesWith"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAttribute"/>
+        <Class IRI="#Attribute"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBehavior"/>
+        <Class IRI="#Behavior"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDevicePrimitive"/>
+        <Class IRI="#DevicePrimitive"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDigitalTwinRelationship"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasOperation"/>
+        <Class IRI="#Operation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRelationship"/>
+        <Class IRI="#Relationship"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSkill"/>
+        <Class IRI="#Skill"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasTask"/>
+        <Class IRI="#Task"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isCombinationOf"/>
+        <Class IRI="#Operation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isComposedOf"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isConnectedTo"/>
+        <Class IRI="#DigitalTwin"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasArgument"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasEndpoint"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasFile"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasName"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasValue"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isComposedDigitalTwin"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isSymmetric"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isTransitive"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasArgument"/>
+        <Class IRI="#Operation"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEndpoint"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasFile"/>
+        <Class IRI="#Behavior"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasName"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasValue"/>
+        <Class IRI="#Attribute"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isComposedDigitalTwin"/>
+        <Class IRI="#DigitalTwin"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isSymmetric"/>
+        <Class IRI="#Relationship"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isTransitive"/>
+        <Class IRI="#Relationship"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasArgument"/>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEndpoint"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasFile"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasValue"/>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isComposedDigitalTwin"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isSymmetric"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isTransitive"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">QueryOfDevicePrimitivesByDTProtege</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#DevicePrimitive"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dp"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#DigitalTwin"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dt"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasOperation"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dp"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <BuiltInAtom IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#selectDistinct">
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dp"/>
+            </BuiltInAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">inherited_device_primitives_protege</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasOperation"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sdt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#op"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#DigitalTwin"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#cdt"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isComposedOf"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#cdt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sdt"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#DevicePrimitive"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#op"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#DigitalTwin"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sdt"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasOperation"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#cdt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#op"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">inherited_skills_protege</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasOperation"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sdt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#op"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#DigitalTwin"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#cdt"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isComposedOf"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#cdt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sdt"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#Skill"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#op"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#DigitalTwin"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sdt"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasOperation"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#cdt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#op"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">QueryComposedDTProtege</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#DigitalTwin"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#cdt"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isComposedOf"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#cdt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sdt"/>
+            </ObjectPropertyAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#cdt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sdt"/>
+            </DifferentIndividualsAtom>
+            <ClassAtom>
+                <Class IRI="#DigitalTwin"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sdt"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <BuiltInAtom IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#selectDistinct">
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#cdt"/>
+            </BuiltInAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">QueryOfDTsProtege</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#DigitalTwin"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dt"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <BuiltInAtom IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#selectDistinct">
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dt"/>
+            </BuiltInAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">inherited_skills_from_definition_protege</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Skill"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sk"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isCombinationOf"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sk"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dp"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#DigitalTwin"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dt"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isCombinationOf"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#tk"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sk"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#Task"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#tk"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasOperation"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#tk"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasOperation"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dp"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasOperation"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sk"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string"></Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">QueryOfSkillsByDTProtege</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Skill"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sk"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#DigitalTwin"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dt"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#hasOperation"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sk"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <BuiltInAtom IRI="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#selectDistinct">
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#dt"/>
+                <Variable IRI="http://www.semanticweb.org/ontologies/collaborativeDTs#sk"/>
+            </BuiltInAtom>
+        </Head>
+    </DLSafeRule>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
