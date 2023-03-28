@@ -1,0 +1,11 @@
+curl "http://localhost:5000/urComputeQ" -d "X=9" -d "Y=10" -X GET
+
+curl "http://localhost:5000/urComputeIK" -d "X=9" -d "Y=10" -X GET
+
+curl "http://localhost:5000/urComputeIK" -d "X=15" -d "Y=0" -X GET
+
+
+curl "http://localhost:5000/kukaComputeIK" -d "X=9" -d "Y=10" -X GET
+
+curl "http://localhost:5000/kukaComputeQ" -d "X=8" -d "Y=10" -X GET
+

@@ -492,6 +492,20 @@ public class DTFlexCellMain {
 					ur5eMoveJ.setParams(argsOp);
 					placeObjectUR.addDevicePrimitive(ur5eMoveJ);
 					
+					argsOp = new ArrayList<Object>();
+					argsOp.add("urComputeQ");
+					argsOp.add(0);
+					argsOp.add(23);
+					argsOp.add(3); // Z = 3
+					jointPositionsObject = String.valueOf(computeInverseKinematicsUR.executeSynchronousOperation(argsOp));
+					jointPositionsList = new ArrayList<String>(Arrays.asList(jointPositionsObject.split(",")));
+					//placeObjectUR.addDevicePrimitive(computeInverseKinematicsUR);
+					argsOp = new ArrayList<Object>();
+					argsOp.add("urMoveP");					
+					argsOp.addAll(jointPositionsList);
+					ur5eMoveJ.setParams(argsOp);
+					placeObjectUR.addDevicePrimitive(ur5eMoveJ);
+					
 					// Adding skill to the task
 					assembleCrossShape.addSkill(graspObjectUR);
 					assembleCrossShape.addSkill(placeObjectUR);
@@ -592,6 +606,22 @@ public class DTFlexCellMain {
 					argsOp.addAll(jointPositionsList);
 					kukaMovePTPRadian.setParams(argsOp);
 					placeObjectKuka.addDevicePrimitive(kukaMovePTPRadian);
+					
+					argsOp = new ArrayList<Object>();
+					argsOp.add("kukaComputeQ");
+					argsOp.add(0);
+					argsOp.add(0);
+					argsOp.add(3); // Z = 3
+					computeInverseKinematicsKuka.setParams(argsOp);
+					jointPositionsObject = String.valueOf(computeInverseKinematicsKuka.executeSynchronousOperation(argsOp));
+					jointPositionsList = new ArrayList<String>(Arrays.asList(jointPositionsObject.split(",")));
+					argsOp = new ArrayList<Object>();
+					argsOp.add("kukaMoveP");					
+					argsOp.addAll(jointPositionsList);
+					kukaMovePTPRadian.setParams(argsOp);
+					placeObjectKuka.addDevicePrimitive(kukaMovePTPRadian);
+					
+	
 					// Adding skill to the task
 					
 					assembleCrossShape.addSkill(graspObjectKuka);
@@ -695,6 +725,20 @@ public class DTFlexCellMain {
 				ur5eMoveJ.setParams(argsOp);
 				placeObjectUR.addDevicePrimitive(ur5eMoveJ);
 				
+				argsOp = new ArrayList<Object>();
+				argsOp.add("urComputeQ");
+				argsOp.add(0);
+				argsOp.add(23);
+				argsOp.add(3); // Z = 3
+				jointPositionsObject = String.valueOf(computeInverseKinematicsUR.executeSynchronousOperation(argsOp));
+				jointPositionsList = new ArrayList<String>(Arrays.asList(jointPositionsObject.split(",")));
+				//placeObjectUR.addDevicePrimitive(computeInverseKinematicsUR);
+				argsOp = new ArrayList<Object>();
+				argsOp.add("urMoveP");					
+				argsOp.addAll(jointPositionsList);
+				ur5eMoveJ.setParams(argsOp);
+				placeObjectUR.addDevicePrimitive(ur5eMoveJ);
+				
 				// Adding skill to the task
 				assembleCrossShape.addSkill(graspObjectUR);
 				assembleCrossShape.addSkill(placeObjectUR);
@@ -786,6 +830,20 @@ public class DTFlexCellMain {
 				argsOp.add(li.get(0));
 				argsOp.add(li.get(1));
 				argsOp.add(2); // Z = 2
+				computeInverseKinematicsKuka.setParams(argsOp);
+				jointPositionsObject = String.valueOf(computeInverseKinematicsKuka.executeSynchronousOperation(argsOp));
+				jointPositionsList = new ArrayList<String>(Arrays.asList(jointPositionsObject.split(",")));
+				argsOp = new ArrayList<Object>();
+				argsOp.add("kukaMoveP");					
+				argsOp.addAll(jointPositionsList);
+				kukaMovePTPRadian.setParams(argsOp);
+				placeObjectKuka.addDevicePrimitive(kukaMovePTPRadian);
+				
+				argsOp = new ArrayList<Object>();
+				argsOp.add("kukaComputeQ");
+				argsOp.add(0);
+				argsOp.add(0);
+				argsOp.add(3); // Z = 3
 				computeInverseKinematicsKuka.setParams(argsOp);
 				jointPositionsObject = String.valueOf(computeInverseKinematicsKuka.executeSynchronousOperation(argsOp));
 				jointPositionsList = new ArrayList<String>(Arrays.asList(jointPositionsObject.split(",")));
@@ -934,6 +992,20 @@ public class DTFlexCellMain {
 					ur5eMoveJ.setParams(argsOp);
 					placeObjectUR.addDevicePrimitive(ur5eMoveJ);
 					
+					argsOp = new ArrayList<Object>();
+					argsOp.add("urComputeQ");
+					argsOp.add(0);
+					argsOp.add(23);
+					argsOp.add(3); // Z = 3
+					jointPositionsObject = String.valueOf(computeInverseKinematicsUR.executeSynchronousOperation(argsOp));
+					jointPositionsList = new ArrayList<String>(Arrays.asList(jointPositionsObject.split(",")));
+					//placeObjectUR.addDevicePrimitive(computeInverseKinematicsUR);
+					argsOp = new ArrayList<Object>();
+					argsOp.add("urMoveP");					
+					argsOp.addAll(jointPositionsList);
+					ur5eMoveJ.setParams(argsOp);
+					placeObjectUR.addDevicePrimitive(ur5eMoveJ);
+					
 					// Adding skill to the task
 					assembleSquareShape.addSkill(graspObjectUR);
 					assembleSquareShape.addSkill(placeObjectUR);
@@ -1025,6 +1097,20 @@ public class DTFlexCellMain {
 					argsOp.add(li.get(0));
 					argsOp.add(li.get(1));
 					argsOp.add(2); // Z = 2
+					computeInverseKinematicsKuka.setParams(argsOp);
+					jointPositionsObject = String.valueOf(computeInverseKinematicsKuka.executeSynchronousOperation(argsOp));
+					jointPositionsList = new ArrayList<String>(Arrays.asList(jointPositionsObject.split(",")));
+					argsOp = new ArrayList<Object>();
+					argsOp.add("kukaMoveP");					
+					argsOp.addAll(jointPositionsList);
+					kukaMovePTPRadian.setParams(argsOp);
+					placeObjectKuka.addDevicePrimitive(kukaMovePTPRadian);
+					
+					argsOp = new ArrayList<Object>();
+					argsOp.add("kukaComputeQ");
+					argsOp.add(0);
+					argsOp.add(0);
+					argsOp.add(3); // Z = 3
 					computeInverseKinematicsKuka.setParams(argsOp);
 					jointPositionsObject = String.valueOf(computeInverseKinematicsKuka.executeSynchronousOperation(argsOp));
 					jointPositionsList = new ArrayList<String>(Arrays.asList(jointPositionsObject.split(",")));
@@ -1139,6 +1225,20 @@ public class DTFlexCellMain {
 				ur5eMoveJ.setParams(argsOp);
 				placeObjectUR.addDevicePrimitive(ur5eMoveJ);
 				
+				argsOp = new ArrayList<Object>();
+				argsOp.add("urComputeQ");
+				argsOp.add(0);
+				argsOp.add(23);
+				argsOp.add(3); // Z = 3
+				jointPositionsObject = String.valueOf(computeInverseKinematicsUR.executeSynchronousOperation(argsOp));
+				jointPositionsList = new ArrayList<String>(Arrays.asList(jointPositionsObject.split(",")));
+				//placeObjectUR.addDevicePrimitive(computeInverseKinematicsUR);
+				argsOp = new ArrayList<Object>();
+				argsOp.add("urMoveP");					
+				argsOp.addAll(jointPositionsList);
+				ur5eMoveJ.setParams(argsOp);
+				placeObjectUR.addDevicePrimitive(ur5eMoveJ);
+				
 				// Adding skill to the task
 				assembleSquareShape.addSkill(graspObjectUR);
 				assembleSquareShape.addSkill(placeObjectUR);
@@ -1230,6 +1330,20 @@ public class DTFlexCellMain {
 				argsOp.add(li.get(0));
 				argsOp.add(li.get(1));
 				argsOp.add(2); // Z = 2
+				computeInverseKinematicsKuka.setParams(argsOp);
+				jointPositionsObject = String.valueOf(computeInverseKinematicsKuka.executeSynchronousOperation(argsOp));
+				jointPositionsList = new ArrayList<String>(Arrays.asList(jointPositionsObject.split(",")));
+				argsOp = new ArrayList<Object>();
+				argsOp.add("kukaMoveP");					
+				argsOp.addAll(jointPositionsList);
+				kukaMovePTPRadian.setParams(argsOp);
+				placeObjectKuka.addDevicePrimitive(kukaMovePTPRadian);
+				
+				argsOp = new ArrayList<Object>();
+				argsOp.add("kukaComputeQ");
+				argsOp.add(0);
+				argsOp.add(0);
+				argsOp.add(3); // Z = 3
 				computeInverseKinematicsKuka.setParams(argsOp);
 				jointPositionsObject = String.valueOf(computeInverseKinematicsKuka.executeSynchronousOperation(argsOp));
 				jointPositionsList = new ArrayList<String>(Arrays.asList(jointPositionsObject.split(",")));

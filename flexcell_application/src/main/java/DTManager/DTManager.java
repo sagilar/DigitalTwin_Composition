@@ -118,13 +118,13 @@ public class DTManager {
 		OWLOntologyManager ontologyManager = OWLManager.createOWLOntologyManager();
         OWLOntology ontology = null;
 		try {
-			ontology = ontologyManager.loadOntologyFromOntologyDocument(new File("semanticnetwork.owl"));
+			ontology = ontologyManager.loadOntologyFromOntologyDocument(new File("cooperative_DTs.owl"));
 		} catch (OWLOntologyCreationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.exit(0);
 		}
-		ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat().setDefaultPrefix("http://www.semanticweb.org/ontologies/collaborativeDTs#");
+		ontologyManager.getOntologyFormat(ontology).asPrefixOWLOntologyFormat().setDefaultPrefix("http://www.semanticweb.org/ontologies/cooperativeDTs#");
 		
 		
         swrlEngine = SWRLAPIFactory.createSWRLRuleEngine(ontology);
