@@ -1,4 +1,4 @@
-# DigitalTwin_Composition
+# Composition of Digital Twins
 ## Modeling file
 The file ```cooperative_DTs.owl``` contains the ontology for the compositional approach.
 
