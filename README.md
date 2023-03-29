@@ -14,7 +14,7 @@ In that folder, you find the AASX asset files, and the source files for the appl
 
 The application contains the following internal packages: ```SkillBasedDTOntology```, which contains the generated Java code from the ontology model; ```CompositionManager```, which extends the interfaces of the ontology for the functional aspects and the integration with the Digital Twins; ```DTManager```, which contains the manager of the Digital Twins and Asset Administration Shell; and ```dtflexcell```, which contains the files for the flex-cell case study with two assembly processes.
   
-The programming follows the skill-based engineering architecture (see [Robot skills for manufacturing: From concept to industrial deployment](http://dx.doi.org/10.1016/j.rcim.2015.04.002)) for the functional aspects of the assembly.
+The programming follows the skill-based engineering architecture (see [Robot skills for manufacturing: From concept to industrial deployment](http://dx.doi.org/10.1016/j.rcim.2015.04.002)) for the implementation of the functional aspects of the operations.
 
 ## Unity Application
 The folder ```UR5e_Kuka_Flexcell``` contains the assets for the Unity application that is used, i.e., the assets for the robotic arms and grippers. The flex-cell object is too heavy to be uploaded to GitHub.  
